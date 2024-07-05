@@ -15,7 +15,8 @@ jobs:
         env:
           PASS: 1234
         run: |
-          echo "${{ env.PASS }}"
+          echo "${{ env.PASS }}
+          
           
 
   Build:
