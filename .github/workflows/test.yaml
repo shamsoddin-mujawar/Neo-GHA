@@ -24,4 +24,5 @@ jobs:
           echo "Today is $DAY_OF_WEEK!"
           echo "${{ env.DAY_OF_WEEK }}"
           echo "${{ env.Greeting }}"
+          echo "${{ env.First_Name }}"
 
