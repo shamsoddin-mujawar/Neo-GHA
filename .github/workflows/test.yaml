@@ -14,4 +14,9 @@ jobs:
       - name: step
         run: |
           echo "${{ secrets.USERNAME }}"
-               
+
+      - name: print repo var
+        run: |
+          echo "${{ vars.TOKEN }}"
+          
+      
