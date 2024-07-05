@@ -16,11 +16,11 @@ jobs:
           PASS: 1234
         run: |
           echo "${{ env.PASS }}
-          
-          
+               
 
   Build:
     needs: Test
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: print name
