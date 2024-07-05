@@ -12,21 +12,6 @@ jobs:
           echo "${{ env.USERNAME }}" # recommended way
 
       - name: step
-        env:
-          PASS: 1234
         run: |
-          echo "${{ env.PASS }}
+          echo "${{ secrets.USERNAME }}"
                
-
-  Build:
-    needs: Test
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: print name
-        run: |
-          echo "${{ env.USERNAME }}"
-          
-          
-          
-          
