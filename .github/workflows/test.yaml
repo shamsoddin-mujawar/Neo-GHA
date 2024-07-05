@@ -1,15 +1,30 @@
 name: print name
 on:
   workflow_dispatch: # manual trigger
+env: 
+  USERNAME: shamsoddin
 jobs:
   Test:
     runs-on: ubuntu-latest
-    env:
-      USER: shamsoddin
     steps:
-      - name: print var
+      - name: print present working dir
         run: |
-          echo "$USER"
-          echo "${{ env.USER }}" # recommended way
+          echo "${{ env.USERNAME }}" # recommended way
+      
+      - name: step
+        env: 
+          PASS: 1234
+        run: |
+          echo "${{ env.PASS }}"
+          
+
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print name
+        run: |
+          echo "${{ env.USERNAME }}"
+          
+          
           
           
