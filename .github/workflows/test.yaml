@@ -1,28 +1,15 @@
-name: Greeting on variable day
-
+name: print name
 on:
-  workflow_dispatch
-
-env:
-  DAY_OF_WEEK: Monday
-
+  workflow_dispatch: # manual trigger
 jobs:
-  greeting_job:
+  Test:
     runs-on: ubuntu-latest
     env:
-      Greeting: Hello
+      USER: shamsoddin
     steps:
-      - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        env:
-          First_Name: Mona
-
-
-      - name: print var name
+      - name: print present working dir
         run: |
-          echo "$First_Name"  
-          echo "Today is $DAY_OF_WEEK!"
-          echo "${{ env.DAY_OF_WEEK }}"
-          echo "${{ env.Greeting }}"
-          echo "${{ env.First_Name }}"
-
+          echo "$USER"
+          echo "${{ env.USER }}" # recommended way
+          
+          
