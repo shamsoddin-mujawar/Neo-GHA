@@ -20,6 +20,10 @@ jobs:
       - name: print environment secret
         run: |
           echo "${{ secrets.PROD_TOKEN }}" 
+      
+      - name: env var
+        run: |
+          echo "${{ vars.ENV_TOKEN }}"
 
 
           
