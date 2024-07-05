@@ -1,16 +1,10 @@
 name: print name
 on:
   workflow_dispatch: # manual trigger
-env:
-  USERNAME: shamsoddin
 jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: print present working dir
-        run: |
-          echo "${{ env.USERNAME }}" # recommended way
-
       - name: step
         run: |
           echo "${{ secrets.USERNAME }}"
@@ -18,5 +12,15 @@ jobs:
       - name: print repo var
         run: |
           echo "${{ vars.TOKEN }}"
+
+  Production:
+    environment: Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: print environment secret
+        run: |
+          echo "${{ secrets.PROD_TOKEN }}" 
+
+
           
       
