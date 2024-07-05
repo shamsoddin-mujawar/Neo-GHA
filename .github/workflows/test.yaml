@@ -7,7 +7,7 @@ jobs:
     env:
       USER: shamsoddin
     steps:
-      - name: print present working dir
+      - name: print var
         run: |
           echo "$USER"
           echo "${{ env.USER }}" # recommended way
