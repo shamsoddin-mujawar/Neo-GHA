@@ -5,15 +5,13 @@ jobs:
   Test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: print repo var
-        run: |
-          echo "$GITHUB_REPOSITORY"
 
       - name: checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: trigger child workflow
-        uses: ./.github/workflows/child.yaml@main
+        uses: shamsoddin-mujawar/Neo-GHA/.github/workflows/child.yaml@main
+
 
 
           
