@@ -10,19 +10,8 @@ jobs:
       - name: step
         id: var
         run: |
-          echo "sum=10" >> "$GITHUB_OUTPUT"
+          echo "sum=10" >> "$GITHUB_ENV"
 
       - name: print repo var
         run: |
-          echo "${{ steps.var.outputs.sum }}"
-
-  Production-job:
-    needs: Test-job
-    runs-on: ubuntu-latest
-    steps:
-      - name: print var
-        run: |
-          echo "${{ needs.Test-job.outputs.out }}"
-
-          
-      
+          echo "$GITHUB_REPOSITORY"
