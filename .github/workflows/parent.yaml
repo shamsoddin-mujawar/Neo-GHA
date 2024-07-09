@@ -9,6 +9,9 @@ jobs:
         run: |
           echo "$GITHUB_REPOSITORY"
 
+      - name: checkout repo
+        uses: actions/checkout@v3
+
       - name: trigger child workflow
         uses: ./.github/workflows/child.yaml@main
 
