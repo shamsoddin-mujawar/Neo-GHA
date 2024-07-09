@@ -8,7 +8,7 @@ jobs:
       - name: step
         id: var
         run: |
-          echo "sum=10" >> "$GITHUB_OUTPUT
+          echo "sum=10" >> "$GITHUB_OUTPUT"
 
       - name: print repo var
         run: |
