@@ -1,0 +1,16 @@
+name: PARENT
+on:
+  workflow_dispatch: # manual trigger
+jobs:
+  Test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print repo var
+        run: |
+          echo "$GITHUB_REPOSITORY"
+
+      - name: trigger child workflow
+        uses: shamsoddin-mujawar/Neo-GHA/.github/workflows/child.yaml@main
+
+
+          
