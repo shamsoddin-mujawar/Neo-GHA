@@ -1,1 +1,16 @@
+name: print name
+on:
+  workflow_dispatch: # manual trigger
+jobs:
+  Test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step
+        id: var
+        run: |
+          echo "sum=10" >> "$GITHUB_OUTPUT
+
+      - name: print repo var
+        run: |
+          echo "${{ steps.var.outputs.sum }}"
 
