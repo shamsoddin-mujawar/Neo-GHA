@@ -1,0 +1,11 @@
+name: CHILD_REUSE_WORKFLOW
+on:
+  workflow_call:
+jobs:
+  Test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print repo var
+        run: |
+          echo "$GITHUB_REPOSITORY"
+          
