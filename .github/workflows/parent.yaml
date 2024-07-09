@@ -10,7 +10,7 @@ jobs:
           echo "$GITHUB_REPOSITORY"
 
       - name: trigger child workflow
-        uses: shamsoddin-mujawar/Neo-GHA/.github/workflows/child.yaml@main
+        uses: ./.github/workflows/child.yaml@main
 
 
           
