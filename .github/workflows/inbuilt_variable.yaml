@@ -4,6 +4,8 @@ on:
 jobs:
   Test-job:
     runs-on: ubuntu-latest
+    outputs:
+      out: ${{ steps.var.outputs.sum }}
     steps:
       - name: step
         id: var
@@ -14,3 +16,13 @@ jobs:
         run: |
           echo "${{ steps.var.outputs.sum }}"
 
+  Production-job:
+    needs: Test-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: print var
+        run: |
+          echo "${{ needs.Test-job.outputs.out }}"
+
+          
+      
